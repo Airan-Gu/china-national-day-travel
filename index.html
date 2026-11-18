@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>China National Day travel</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight,alt,wide.9b64840a.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight,alt,wide.9b64840a.css">
+<link rel="modulepreload" href="./_observablehq/client.ea3ab4b8.js">
+<link rel="modulepreload" href="./_observablehq/runtime.13bc3751.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.3a5bae2b.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.19/2e9f152c.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.2/172963d6.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.5/52d144d7.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.1/c0e5fbdf.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.1/321ca391.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.2/468a53d3.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.1/91613843.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.3/8e79d948.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.6/d6c84ddb.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.2/a70bd0ef.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.1/47229f37.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.2/4a4147a2.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.2/ca4f77fd.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.2/eef84249.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.1/c1b23a7b.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.3/b1442952.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.2/e07dc79e.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.3/d3b0a1aa.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.2/6de199be.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.1/9eb769d3.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.2/93595b54.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.2/80bafd54.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.2/8bf3f736.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.3/d15d690b.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.1/287966da.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.1/c4158eb5.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.1/a41eab18.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.1/acaa76bc.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.1/d561e9cd.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.2/ea7e7cf7.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.2/f861168f.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.1/c1f09323.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.ea3ab4b8.js";
+
+define({id: "a922020f", outputs: ["travel"], body: () => {
+const travel = [
+  {date: "Oct 1", million: 329.495, highlight: true},
+  {date: "Oct 2", million: 305.504, highlight: false},
+  {date: "Oct 3", million: 303.568, highlight: false},
+  {date: "Oct 4", million: 305.390, highlight: false},
+  {date: "Oct 5", million: 303.337, highlight: false},
+  {date: "Oct 6", million: 303.460, highlight: false},
+  {date: "Oct 7", million: 290.791, highlight: false}
+];
+return {travel};
+}});
+
+define({id: "34c68f2f", inputs: ["Plot","width","travel","display"], outputs: ["chart"], body: (Plot,width,travel,display) => {
+const chart = Plot.plot({
+  width,
+  height: 440,
+  marginTop: 32,
+  marginRight: 24,
+  marginBottom: 58,
+  marginLeft: 86,
+  x: {
+    label: null,
+    padding: 0.28
+  },
+  y: {
+    label: "Interregional passenger flow (million trips)",
+    domain: [0, 350],
+    grid: true,
+    nice: false,
+    tickFormat: d => d
+  },
+  marks: [
+    Plot.ruleY([0]),
+    Plot.barY(travel, {
+      x: "date",
+      y: "million",
+      fill: d => d.highlight ? "var(--theme-blue)" : "var(--theme-foreground-fainter)",
+      inset: 8,
+      ariaLabel: d => `${d.date}: ${d.million.toFixed(1)} million trips`
+    }),
+    Plot.text(travel.filter(d => d.highlight), {
+      x: "date",
+      y: "million",
+      text: () => "329.5 million trips",
+      dy: -12,
+      fontWeight: 500,
+      fill: "currentColor"
+    })
+  ]
+});
+
+display(chart);
+return {chart};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">China National Day travel</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Travel peak</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="china-s-national-day-travel-peaked-on-the-first-day" tabindex="-1"><a class="observablehq-header-anchor" href="#china-s-national-day-travel-peaked-on-the-first-day">China’s National Day travel peaked on the first day</a></h1>
+<p>Daily whole-society interregional personnel flow during China’s official National Day holiday, October 1–7, 2026.</p>
+<div class="observablehq observablehq--block"><!--:a922020f:--></div>
+<div class="observablehq observablehq--block"><!--:34c68f2f:--></div>
+<p>October 1 was the busiest day, with 329.5 million trips—7.9% more than October 2, the second-busiest day.</p>
+<p><small>Source: <a href="https://www.mot.gov.cn/xinwen/jiaotongyaowen/202610/t20261008_4225492.html" target="_blank" rel="noopener noreferrer">China Ministry of Transport holiday summary</a> and daily whole-society interregional personnel-flow reports for October 1–7, 2026. Figures are reported in 万人次 and converted here to million trips. The seven daily values sum to 214,154.5万人次, or 2.141545 billion trips, which rounds to 2.142 billion.</small></p>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-11-18T19:13:45">Nov 18, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>
